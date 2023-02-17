@@ -46,7 +46,7 @@ Propose a way to use both frontal and lateral images to enhance image-text match
 After extracting image and text features, the model learns vector-based similarity representations to characterize local and global alignments. The SAF module attends on significant alignments while reducing the disturbance of less meaningful alignments.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/82229571/219780858-f5fee9a9-d3ed-4f9a-b41c-5716f187dd3b.png" />
+  <img src="https://user-images.githubusercontent.com/82229571/219783657-0c6bd01b-41df-447a-a61f-542be48d6dd1.png" />
 </p>
 
 <br />
