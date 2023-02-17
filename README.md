@@ -1,2 +1,112 @@
-# Enhancing-X-ray-Image-Text-Matching
-Final submission for Project-B, Electrical Engineering, Technion
+<h1 align="center"> Enhancing-X-ray-Image-Text-Matching </h1> 
+<h3 align="center"> Project B 044169 – Spring 2022 </h3>
+<h5 align="center"> Technion – Israel Institute of Technology </h5>
+
+  <p align="center">
+    <a href="https://github.com/MayanLeavitt"> Mayan Leavitt </a> •
+    <a href="https://github.com/idankinderman"> Edan Kinderman </a> 
+  </p>
+  
+<br />
+<br />
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/82229571/219778522-8ba040a8-011c-4158-88af-8a975237d0a8.png" />
+  <img src="https://user-images.githubusercontent.com/82229571/219778775-bc5aed0d-0f45-4dee-aa12-7dae9275119f.png" />
+</p>
+
+<br />
+<br />
+
+- [Summary](#summary)
+- [The SGRAF Model](#sgraf)
+- [Data](#data)
+- [Proposed Improvements](#proposed-improvements)
+- [Comparison](#comparison)
+- [The Best Model](#best)
+- [Final Results](#final-results)
+- [Files and Usage](#files-and-usage)
+- [References and credits](#references-and-credits)
+
+
+![-----------------------------------------------------](https://user-images.githubusercontent.com/62880315/143689276-058e2ec4-98ac-4367-863d-5334b959bb44.png)
+
+
+<h2 id="summary"> :pencil: Summary </h2>
+
+Propose a way to use both frontal and lateral images to enhance image-text matching.
+
+<br />
+
+![-----------------------------------------------------](https://user-images.githubusercontent.com/62880315/143689276-058e2ec4-98ac-4367-863d-5334b959bb44.png)
+
+
+<h2 id="sgraf"> :lungs: The SGRAF Model </h2>
+
+After extracting image and text features, the model learns vector-based similarity representations to characterize local and global alignments. The SAF module attends on significant alignments while reducing the disturbance of less meaningful alignments.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/82229571/219780858-f5fee9a9-d3ed-4f9a-b41c-5716f187dd3b.png" />
+</p>
+
+<br />
+
+![-----------------------------------------------------](https://user-images.githubusercontent.com/62880315/143689276-058e2ec4-98ac-4367-863d-5334b959bb44.png)
+
+<h2 id="data"> :stethoscope: Data </h2>
+
+Studies contain a frontal image, a lateral image and a radiology report.
+The lateral image is often not used even though it contains critical information.
+
+<br />
+
+![-----------------------------------------------------](https://user-images.githubusercontent.com/62880315/143689276-058e2ec4-98ac-4367-863d-5334b959bb44.png)
+
+<h2 id="proposed-improvements"> :thought_balloon: Proposed Improvements </h2>
+
+1. Check different loss functions: Bi-directional ranking loss, NT-Xnet and their weighted sum.
+2. Train two models simultaneously – one for each viewpoint, and use learned weights to average the similarity scores.
+3. Concatenate the image features to obtain one input.
+4. Use positional encoding to differentiate between the two viewpoints.
+
+<br />
+
+![-----------------------------------------------------](https://user-images.githubusercontent.com/62880315/143689276-058e2ec4-98ac-4367-863d-5334b959bb44.png)
+
+<h2 id="comparison"> :bar_chart: Comparison </h2>
+
+
+<br />
+
+![-----------------------------------------------------](https://user-images.githubusercontent.com/62880315/143689276-058e2ec4-98ac-4367-863d-5334b959bb44.png)
+
+<h2 id="best"> :100: The Best Model </h2>
+
+Two networks that train concurrently using the same text encoder. The outputs are averaged with learned weights.
+
+<br />
+
+![-----------------------------------------------------](https://user-images.githubusercontent.com/62880315/143689276-058e2ec4-98ac-4367-863d-5334b959bb44.png)
+
+<h2 id="final-results"> :stethoscope: Final Results </h2>
+
+Using the lateral images improves results as opposed to using frontal data alone.
+In addition, training two models at once achieves the best performance, but concatenating image features is a cheaper way to combine viewpoints.
+
+<br />
+
+![-----------------------------------------------------](https://user-images.githubusercontent.com/62880315/143689276-058e2ec4-98ac-4367-863d-5334b959bb44.png)
+
+<h2 id="files-and-usage"> :man_technologist: Files and Usage</h2>
+
+| File Name        | Description           |
+| ---------------- |:-----------------:|
+|  |  |
+
+<br />
+
+![-----------------------------------------------------](https://user-images.githubusercontent.com/62880315/143689276-058e2ec4-98ac-4367-863d-5334b959bb44.png)
+
+<h2 id="references-and-credits"> :raised_hands: References and credits</h2>
+
+* Project supervisor: Gefen Dawidowicz. Some of the algorithms were implemented based on her code.
