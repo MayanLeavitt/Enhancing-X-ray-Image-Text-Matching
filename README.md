@@ -127,7 +127,7 @@ In addition, training two models at once achieves the best performance, but conc
 <h2 id="references-and-credits"> :raised_hands: References and credits</h2>
 
 * Project supervisor: Gefen Dawidowicz. Some of the algorithms were implemented based on her code.
-* <a id="ref1">[[1]](https://arxiv.org/abs/2101.01368)</a> "Similarity Reasoning and Filtration for Image-Text Matching", Z. M. L. Diao, AAAI conference on artificial intelligence, 2021.
-    
-* <a id="ref2">[[2]](https://www.sciencedirect.com/science/article/abs/pii/S1361841512001703)</a> The parametric maps of an osteosarcoma tumor were taken from "Reliable estimation of incoherent motion parametric maps from diffusion-weighted MRI using fusion bootstrap moves", M. F., J. M. Perez-Rossello, M. J. Callahan, S. D. Voss, K. E., R. V. Mulkern and S. K. Warfield,  Medical image analysis, pp. 325-336, 2013. [↩](#the-ivim-model)
-* <a id="ref3">[[3]](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0211911)</a> The classic solver is proposed in “Estimation of intravoxel incoherent motion parameters using low b-values”, C. Ye, D. Xu, Y. Qin, L. Wang, R. Wang, W. Li, Z. Kuai, Y. Zhu, PloS one, 2019. [↩](#existing-solvers)
+* <a id="ref1">[[1]](https://arxiv.org/abs/2101.01368)</a> Z. M. L. Diao, "Similarity Reasoning and Filtration for Image-Text Matching", AAAI conference on artificial intelligence, 2021.
+* <a id="ref2">[[2]]([https://arxiv.org/abs/2002.05709)</a> K. N. H. Chen, “A Simple Framework for Contrastive Learning of Visual Representations” PMLR , pp. 1597-1607, 2020. 
+* <a id="ref3">[[3]](https://pubmed.ncbi.nlm.nih.gov/35647616/)</a> S. M. S. P. G. Ji, “Improving Joint Learning of Chest X-Ray and Radiology Report by Word Region Alignment”  MLMI ,  pp. 110-119, 2021.
+* <a id="ref4">[[4]](https://arxiv.org/abs/1706.03762/)</a> S. P. U. J. N. G. K. P. Vaswani, “Attention is all you need”  Advances in neural information processing systems, 2017. 
