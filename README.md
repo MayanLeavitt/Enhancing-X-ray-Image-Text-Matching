@@ -40,7 +40,7 @@ Through our experimentation, we successfully incorporated the second X-ray scan 
 
 <h2 id="sgraf"> :lungs: The SGRAF Model </h2>
 
-After extracting image and text features, the model learns vector-based similarity representations to characterize local and global alignments. The SAF module attends to significant alignments while reducing the disturbance of less meaningful alignments. For more details see the original article [[1]](#ref1).
+The model extract features from the given image and text, and learn vector-based similarity representations between different areas in them. Then a SAF (Similarity Attention Filtartaion) module processes the vectors alignments using attention mechanisms to identify significant alignments and reduce less meaningful ones. The module outputs a matching score indicating the compatibility between the image and text. For more details see the original article [[1]](#ref1).
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/82229571/219783657-0c6bd01b-41df-447a-a61f-542be48d6dd1.png" />
@@ -52,7 +52,7 @@ After extracting image and text features, the model learns vector-based similari
 <h2 id="data"> :stethoscope: Data </h2>
 
 We used the MIMIC-CXR dataset, which contains studies with a frontal image, a lateral image and a radiology report.
-The lateral image is often not used even though it contains critical information.
+In the existing image-text matching models, the lateral image is often not used, even though it contains critical information.
 
 <br />
 
@@ -60,8 +60,8 @@ The lateral image is often not used even though it contains critical information
 <h2 id="proposed-improvements"> :thought_balloon: Proposed Improvements </h2>
 
 1. Check different loss functions: Bi-directional ranking loss, NT-Xnet [[2]](#ref2) and their weighted sum.
-2. Train two models simultaneously – one for each viewpoint, and use learned weights to average the similarity scores.
-3. Concatenate the image features to obtain one input.
+2. Train two regular SGRAF models simultaneously – one for each viewpoint, and use learned weights to average the similarity scores.
+3. Concatenate the two image types features to obtain one input.
 4. Use positional encoding to differentiate between the two viewpoints.
 
 <br />
@@ -69,9 +69,9 @@ The lateral image is often not used even though it contains critical information
 
 <h2 id="comparison"> :bar_chart: Comparison </h2>
 
-All the matrices here are of matching image to the right text. Higher R@K means better retrieval. 
+Here is an evaluation of the model's ability to match the image with the correct text. A higher R@K value indicates improved retrieval performance, indicating a better alignment between the image and the corresponding text.
 
-Here is a comparison of the basic models, which trained only on one type of image (frontal or lateral). Those are matrices of matching image to the right text.
+Here is a comparison of the basic models, which trained only on one type of image (frontal or lateral).
 
 | Image type        | Loss           | R@1        | R@5           | R@10        |
 | ---------------- |:-----------------:| :-----------------:| :-----------------:| :-----------------:|
@@ -92,7 +92,7 @@ Here is a comparison of the "double" models family, which has two encoders for e
 | Light Double Model | V | V | 8.5 | 22.5 | 31.5 |
 | Pretrained Model | V | X | 8.1 | 21 | 29.6 |
 
-Here is a comparison of the "concatenation" models family, which gets as input a text and a concatenation of the frontal and lateral image. Some of those models trained with positional encoding [[4]](#ref4) were added to the images. 
+Here is a comparison of the "concatenation" models family, which gets as input a text and a concatenation of the frontal and lateral images. Some of those models trained with positional encoding [[4]](#ref4) added to the images. 
 
 | Model type        | Positional encoding           | R@1        | R@5           | R@10        |
 | ---------------- |:-----------------:| :-----------------:| :-----------------:| :-----------------:|
@@ -105,7 +105,6 @@ We can see that using the lateral images improves results as opposed to using fr
 In addition, training two models at once achieves the best performance, but concatenating image features is a cheaper way to combine viewpoints.
 
 <br />
-
 
 
 <h2 id="files-and-usage"> :man_technologist: Files and Usage</h2>
@@ -127,9 +126,9 @@ In addition, training two models at once achieves the best performance, but conc
 
 You can train a regular SGRAF model on the MIMIC-CXR dataset, using only frontal images, with this script:
 
-'''
+```python
 opts_xray.py --model_name '../checkpoint/<model_name>' --view 'frontal' --model_num <number> --model_type 'regular_model' --batch_size 64 --num_epochs 40
-'''
+```
 
 <br />
 
