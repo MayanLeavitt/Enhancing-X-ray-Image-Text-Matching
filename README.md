@@ -40,7 +40,7 @@ Through our experimentation, we successfully incorporated the second X-ray scan 
 
 <h2 id="sgraf"> :lungs: The SGRAF Model </h2>
 
-After extracting image and text features, the model learns vector-based similarity representations to characterize local and global alignments. The SAF module attends on significant alignments while reducing the disturbance of less meaningful alignments. For more details see the original article [[1]](#ref1).
+After extracting image and text features, the model learns vector-based similarity representations to characterize local and global alignments. The SAF module attends to significant alignments while reducing the disturbance of less meaningful alignments. For more details see the original article [[1]](#ref1).
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/82229571/219783657-0c6bd01b-41df-447a-a61f-542be48d6dd1.png" />
@@ -69,9 +69,9 @@ The lateral image is often not used even though it contains critical information
 
 <h2 id="comparison"> :bar_chart: Comparison </h2>
 
-All the matrices here are of matching image to the right text. Higher R@K means better retrival. 
+All the matrices here are of matching image to the right text. Higher R@K means better retrieval. 
 
-Here is a comparison of the basic models, which trained only on one type of image (frontal or lateral). Those are matrices of matching inage to the right text.
+Here is a comparison of the basic models, which trained only on one type of image (frontal or lateral). Those are matrices of matching image to the right text.
 
 | Image type        | Loss           | R@1        | R@5           | R@10        |
 | ---------------- |:-----------------:| :-----------------:| :-----------------:| :-----------------:|
@@ -82,7 +82,7 @@ Here is a comparison of the basic models, which trained only on one type of imag
 | Frontal | Sum | 3.3 | 10.4 | 15.4 |
 | Lateral | Sum | 0.3 | 2 | 3.4 |
 
-Here is a comparison of the "double" models family, which has two encoders for encoding each image type (frontal and lateral). Those models trained on both image types.
+Here is a comparison of the "double" models family, which has two encoders for encoding each image type (frontal and lateral). Those models are trained on both image types.
 
 | Model type       | Learned weights  | Shared text encoder | R@1        | R@5           | R@10        |
 | ---------------- |:-----------------:| :-----------------:| :-----------------:| :-----------------:| :-----------------:|
@@ -92,7 +92,7 @@ Here is a comparison of the "double" models family, which has two encoders for e
 | Light Double Model | V | V | 8.5 | 22.5 | 31.5 |
 | Pretrained Model | V | X | 8.1 | 21 | 29.6 |
 
-Here is a comparison of the "concatinaion" models family, which gets as input a text and a concatenation of the frontal and lateral image. Some of those models trained with positional encoding [[4]](#ref4) added to the images. 
+Here is a comparison of the "concatenation" models family, which gets as input a text and a concatenation of the frontal and lateral image. Some of those models trained with positional encoding [[4]](#ref4) were added to the images. 
 
 | Model type        | Positional encoding           | R@1        | R@5           | R@10        |
 | ---------------- |:-----------------:| :-----------------:| :-----------------:| :-----------------:|
@@ -127,7 +127,9 @@ In addition, training two models at once achieves the best performance, but conc
 
 You can train a regular SGRAF model on the MIMIC-CXR dataset, using only frontal images, with this script:
 
-'opts_xray.py --model_name '../checkpoint/<model_name>' --view 'frontal' --model_num <number> --model_type 'regular_model' --batch_size 64 --num_epochs 40'
+'''
+opts_xray.py --model_name '../checkpoint/<model_name>' --view 'frontal' --model_num <number> --model_type 'regular_model' --batch_size 64 --num_epochs 40
+'''
 
 <br />
 
