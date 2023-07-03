@@ -24,6 +24,7 @@
 - [Proposed Improvements](#proposed-improvements)
 - [Comparison](#comparison)
 - [Files and Usage](#files-and-usage)
+- [How to Run the Code](#run-the-code)
 - [References and credits](#references-and-credits)
 
 
@@ -117,6 +118,16 @@ In addition, training two models at once achieves the best performance, but conc
 | model_xray.py | The models implementation |
 | opts_xray.py | Running experiments using scripts |
 | train_xray.py | For training a model |
+
+
+<br />
+
+
+<h2 id="run-the-code"> :raised_hands: How to Run the Code </h2>
+
+You can train a regular SGRAF model on the MIMIC-CXR dataset, using only frontal images, with this script:
+
+'opts_xray.py --model_name '../checkpoint/<model_name>' --view 'frontal' --model_num <number> --model_type 'regular_model' --batch_size 64 --num_epochs 40'
 
 <br />
 
