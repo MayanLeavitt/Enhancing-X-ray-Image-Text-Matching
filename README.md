@@ -23,8 +23,6 @@
 - [Data](#data)
 - [Proposed Improvements](#proposed-improvements)
 - [Comparison](#comparison)
-- [The Best Model](#best)
-- [Final Results](#final-results)
 - [Files and Usage](#files-and-usage)
 - [References and credits](#references-and-credits)
 
@@ -70,24 +68,46 @@ The lateral image is often not used even though it contains critical information
 
 <h2 id="comparison"> :bar_chart: Comparison </h2>
 
+All the matrices here are of matching image to the right text. Higher R@K means better retrival. 
 
-<br />
+Here is a comparison of the basic models, which trained only on one type of image (frontal or lateral). Those are matrices of matching inage to the right text.
 
+| Image type        | Loss           | R@1        | R@5           | R@10        |
+| ---------------- |:-----------------:| :-----------------:| :-----------------:| :-----------------:|
+| Frontal | BRL | 0.5 | 4.2 | 8.5 |
+| Lateral | BRL | 0.5 | 1.5 | 3.1 |
+| Frontal | NT-Xent | 6.6 | 18.6 | 27.2 |
+| Lateral | NT-Xent | 5.0 | 13.9 | 21.1 |
+| Frontal | Sum | 3.3 | 10.4 | 15.4 |
+| Lateral | Sum | 0.3 | 2 | 3.4 |
 
+Here is a comparison of the "double" models family, which has two encoders for encoding each image type (frontal and lateral). Those models trained on both image types.
 
-<h2 id="best"> :100: The Best Model </h2>
+| Model type       | Learned weights  | Shared text encoder | R@1        | R@5           | R@10        |
+| ---------------- |:-----------------:| :-----------------:| :-----------------:| :-----------------:| :-----------------:|
+| Uniform Average | X | X | 8.1 | 21.3 | 29.3 |
+| Weighted Average | X | X | 8.2 | 21.2 | 29.5 |
+| Double Model | V | X | 6.7 | 21.1 | 30.4 |
+| Light Double Model | V | V | 8.5 | 22.5 | 31.5 |
+| Pretrained Model | V | X | 8.1 | 21 | 29.6 |
+
+Here is a comparison of the "concatinaion" models family, which gets as input a text and a concatenation of the frontal and lateral image. Some of those models trained with positional encoding added to the images. 
+
+| Model type        | Positional encoding           | R@1        | R@5           | R@10        |
+| ---------------- |:-----------------:| :-----------------:| :-----------------:| :-----------------:|
+| Basic Concatenation | X | 7.4 | 20.2 | 29.9 |
+| Tagged Features | X | 6.6 | 20.1 | 27 |
+| Constant Positional Encoding | V | 7.4 | 18.8 | 27.2 |
+| Full Positional Encoding | V | 7.5 | 20.6 | 28 |
 
 Two networks that train concurrently using the same text encoder. The outputs are averaged with learned weights.
-
-<br />
-
-
-<h2 id="final-results"> :stethoscope: Final Results </h2>
-
-Using the lateral images improves results as opposed to using frontal data alone.
+We can see that using the lateral images improves results as opposed to using frontal data alone.
 In addition, training two models at once achieves the best performance, but concatenating image features is a cheaper way to combine viewpoints.
 
 <br />
+
+
+
 
 
 <h2 id="files-and-usage"> :man_technologist: Files and Usage</h2>
