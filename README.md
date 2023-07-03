@@ -37,7 +37,6 @@ Through our experimentation, we successfully incorporated the second X-ray scan 
 
 <br />
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/62880315/143689276-058e2ec4-98ac-4367-863d-5334b959bb44.png)
 
 
 <h2 id="sgraf"> :lungs: The SGRAF Model </h2>
@@ -50,7 +49,6 @@ After extracting image and text features, the model learns vector-based similari
 
 <br />
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/62880315/143689276-058e2ec4-98ac-4367-863d-5334b959bb44.png)
 
 <h2 id="data"> :stethoscope: Data </h2>
 
@@ -59,7 +57,6 @@ The lateral image is often not used even though it contains critical information
 
 <br />
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/62880315/143689276-058e2ec4-98ac-4367-863d-5334b959bb44.png)
 
 <h2 id="proposed-improvements"> :thought_balloon: Proposed Improvements </h2>
 
@@ -70,14 +67,13 @@ The lateral image is often not used even though it contains critical information
 
 <br />
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/62880315/143689276-058e2ec4-98ac-4367-863d-5334b959bb44.png)
 
 <h2 id="comparison"> :bar_chart: Comparison </h2>
 
 
 <br />
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/62880315/143689276-058e2ec4-98ac-4367-863d-5334b959bb44.png)
+
 
 <h2 id="best"> :100: The Best Model </h2>
 
@@ -85,7 +81,6 @@ Two networks that train concurrently using the same text encoder. The outputs ar
 
 <br />
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/62880315/143689276-058e2ec4-98ac-4367-863d-5334b959bb44.png)
 
 <h2 id="final-results"> :stethoscope: Final Results </h2>
 
@@ -94,7 +89,6 @@ In addition, training two models at once achieves the best performance, but conc
 
 <br />
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/62880315/143689276-058e2ec4-98ac-4367-863d-5334b959bb44.png)
 
 <h2 id="files-and-usage"> :man_technologist: Files and Usage</h2>
 
@@ -104,7 +98,6 @@ In addition, training two models at once achieves the best performance, but conc
 
 <br />
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/62880315/143689276-058e2ec4-98ac-4367-863d-5334b959bb44.png)
 
 <h2 id="references-and-credits"> :raised_hands: References and credits</h2>
 
