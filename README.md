@@ -127,7 +127,7 @@ In addition, training two models at once achieves the best performance, but conc
 <h2 id="references-and-credits"> :raised_hands: References and credits</h2>
 
 * Project supervisor: Gefen Dawidowicz. Some of the algorithms were implemented based on her code.
-* <a id="ref1">[[1]]([https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.995.1925&rep=rep1&type=pdf](https://arxiv.org/abs/2101.01368))</a> "Similarity Reasoning and Filtration for Image-Text Matching", Z. M. L. Diao, AAAI conference on artificial intelligence, 2021. [↩](#dw-mri)
+* <a id="ref1">[[1]](https://arxiv.org/abs/2101.01368)</a> "Similarity Reasoning and Filtration for Image-Text Matching", Z. M. L. Diao, AAAI conference on artificial intelligence, 2021.
     
 * <a id="ref2">[[2]](https://www.sciencedirect.com/science/article/abs/pii/S1361841512001703)</a> The parametric maps of an osteosarcoma tumor were taken from "Reliable estimation of incoherent motion parametric maps from diffusion-weighted MRI using fusion bootstrap moves", M. F., J. M. Perez-Rossello, M. J. Callahan, S. D. Voss, K. E., R. V. Mulkern and S. K. Warfield,  Medical image analysis, pp. 325-336, 2013. [↩](#the-ivim-model)
 * <a id="ref3">[[3]](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0211911)</a> The classic solver is proposed in “Estimation of intravoxel incoherent motion parameters using low b-values”, C. Ye, D. Xu, Y. Qin, L. Wang, R. Wang, W. Li, Z. Kuai, Y. Zhu, PloS one, 2019. [↩](#existing-solvers)
