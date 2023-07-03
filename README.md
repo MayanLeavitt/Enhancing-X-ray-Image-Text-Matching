@@ -126,7 +126,7 @@ In addition, training two models at once achieves the best performance, but conc
 
 You can train a regular SGRAF model on the MIMIC-CXR dataset, using only frontal images, with this script:
 
-```python
+```python 
 opts_xray.py --model_name '../checkpoint/<model_name>' --view 'frontal' --model_num <number> --model_type 'regular_model' --batch_size 64 --num_epochs 40
 ```
 
