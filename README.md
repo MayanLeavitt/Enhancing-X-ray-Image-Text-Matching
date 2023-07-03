@@ -39,7 +39,7 @@ Through our experimentation, we successfully incorporated the second X-ray scan 
 
 <h2 id="sgraf"> :lungs: The SGRAF Model </h2>
 
-After extracting image and text features, the model learns vector-based similarity representations to characterize local and global alignments. The SAF module attends on significant alignments while reducing the disturbance of less meaningful alignments.
+After extracting image and text features, the model learns vector-based similarity representations to characterize local and global alignments. The SAF module attends on significant alignments while reducing the disturbance of less meaningful alignments. For more details see the original article [[1]](#ref1).
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/82229571/219783657-0c6bd01b-41df-447a-a61f-542be48d6dd1.png" />
@@ -50,7 +50,7 @@ After extracting image and text features, the model learns vector-based similari
 
 <h2 id="data"> :stethoscope: Data </h2>
 
-Studies contain a frontal image, a lateral image and a radiology report.
+We used the MIMIC-CXR dataset, which contains studies with a frontal image, a lateral image and a radiology report.
 The lateral image is often not used even though it contains critical information.
 
 <br />
@@ -58,7 +58,7 @@ The lateral image is often not used even though it contains critical information
 
 <h2 id="proposed-improvements"> :thought_balloon: Proposed Improvements </h2>
 
-1. Check different loss functions: Bi-directional ranking loss, NT-Xnet and their weighted sum.
+1. Check different loss functions: Bi-directional ranking loss, NT-Xnet [[2]](#ref2) and their weighted sum.
 2. Train two models simultaneously – one for each viewpoint, and use learned weights to average the similarity scores.
 3. Concatenate the image features to obtain one input.
 4. Use positional encoding to differentiate between the two viewpoints.
@@ -91,7 +91,7 @@ Here is a comparison of the "double" models family, which has two encoders for e
 | Light Double Model | V | V | 8.5 | 22.5 | 31.5 |
 | Pretrained Model | V | X | 8.1 | 21 | 29.6 |
 
-Here is a comparison of the "concatinaion" models family, which gets as input a text and a concatenation of the frontal and lateral image. Some of those models trained with positional encoding added to the images. 
+Here is a comparison of the "concatinaion" models family, which gets as input a text and a concatenation of the frontal and lateral image. Some of those models trained with positional encoding [[4]](#ref4) added to the images. 
 
 | Model type        | Positional encoding           | R@1        | R@5           | R@10        |
 | ---------------- |:-----------------:| :-----------------:| :-----------------:| :-----------------:|
@@ -100,13 +100,10 @@ Here is a comparison of the "concatinaion" models family, which gets as input a 
 | Constant Positional Encoding | V | 7.4 | 18.8 | 27.2 |
 | Full Positional Encoding | V | 7.5 | 20.6 | 28 |
 
-Two networks that train concurrently using the same text encoder. The outputs are averaged with learned weights.
 We can see that using the lateral images improves results as opposed to using frontal data alone.
 In addition, training two models at once achieves the best performance, but concatenating image features is a cheaper way to combine viewpoints.
 
 <br />
-
-
 
 
 
@@ -128,6 +125,6 @@ In addition, training two models at once achieves the best performance, but conc
 
 * Project supervisor: Gefen Dawidowicz. Some of the algorithms were implemented based on her code.
 * <a id="ref1">[[1]](https://arxiv.org/abs/2101.01368)</a> Z. M. L. Diao, "Similarity Reasoning and Filtration for Image-Text Matching", AAAI conference on artificial intelligence, 2021.
-* <a id="ref2">[[2]]([https://arxiv.org/abs/2002.05709)</a> K. N. H. Chen, “A Simple Framework for Contrastive Learning of Visual Representations” PMLR , pp. 1597-1607, 2020. 
+* <a id="ref2">[[2]](https://arxiv.org/abs/2002.05709)</a> K. N. H. Chen, “A Simple Framework for Contrastive Learning of Visual Representations” PMLR , pp. 1597-1607, 2020. 
 * <a id="ref3">[[3]](https://pubmed.ncbi.nlm.nih.gov/35647616/)</a> S. M. S. P. G. Ji, “Improving Joint Learning of Chest X-Ray and Radiology Report by Word Region Alignment”  MLMI ,  pp. 110-119, 2021.
 * <a id="ref4">[[4]](https://arxiv.org/abs/1706.03762/)</a> S. P. U. J. N. G. K. P. Vaswani, “Attention is all you need”  Advances in neural information processing systems, 2017. 
