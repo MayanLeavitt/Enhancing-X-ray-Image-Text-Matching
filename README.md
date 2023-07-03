@@ -29,12 +29,11 @@
 - [References and credits](#references-and-credits)
 
 
-![-----------------------------------------------------](https://user-images.githubusercontent.com/62880315/143689276-058e2ec4-98ac-4367-863d-5334b959bb44.png)
-
-
 <h2 id="summary"> :pencil: Summary </h2>
 
-Propose a way to use both frontal and lateral images to enhance image-text matching.
+Our project aimed to improve the matching of two X-ray scans with their fitting radiology report, using the SGRAF image-text matching model as a baseline. To achieve this, we tested various loss functions, architectures, and training methods.
+
+Through our experimentation, we successfully incorporated the second X-ray scan into our models and achieved significantly better results. Our research provides insights into enhancing the accuracy of image-text matching, which can have important implications for medical diagnosis and treatment.
 
 <br />
 
